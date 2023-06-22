@@ -1,0 +1,28 @@
+import profesionales.*
+import empresa.*
+import universidad.*
+
+describe "Etapa 1"{
+	method initialize (){
+		const SanMartin = new Universidad(honorariosPorHoraRecomendado = 3500, provincia = "Buenos Aires")
+		const Rosario = new Universidad(honorariosPorHoraRecomendado = 2800 , provincia = " Santa Fe")
+		const Corrientes = new Universidad(honorariosPorHoraRecomendado = 4200 , provincia = "Corrientes")
+		const Hurlingham = new Universidad(honorariosPorHoraRecomendado = 8800 , provincia = "Buenos Aires")
+		
+		const Juana = new ProfesionalVinculado (universidad = Rosario)
+		const Melina = new ProfesionalAsociado (universidad = Corrientes)
+		const Rocio = new ProfesionalLibre (universidad = Hurlingham, honorariosPorHora = 5000, provinciasDondePuedeTrabajar = #{"Santa Fe", "Córdoba", "Buenos Aires"})
+		const Luciana = new ProfesionalLibre (universidad = Rosario, honorariosPorHora = 3200, provinciasDondePuedeTrabajar = #{"Santa Fe", "Entre Rios"})
+		
+		const Mojang = new Empresa (honorarioReferencia = 3500, empleados =[Juana, Melina, Rocio, Luciana])
+		
+	}
+}
+
+
+
+test "testX" {
+
+	assert.that(true)
+
+}
